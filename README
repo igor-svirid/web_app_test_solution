@@ -1,0 +1,30 @@
+Allure:
+- To get allure report you need to have allure installed and the following commands in terminal should be run:
+    run tests: 'pytest --alluredir="directory_to_store_allure_files"
+    open html report: allure serve "directory_to_store_allure_files"
+- To save allure results running tests using pycharm test runner you need to set to Additional Arguments --alluredir="directory_to_store_allure_files"
+
+Pytest:
+- To run tests in parallel add -n={number_of_threads} to your pytest command. Logging doesn't support parallel run, so it
+will be hard to read them. But logs in allure work fine.
+- There 2 marks for tests ui - for test that require browser and api - for test with api actions only
+
+Resources:
+/framework/config/config - common configs for framework
+/framework/logger/logger_config - configs for logger
+/scenarios/resources/ - configs and test data files for test solution
+
+Tests:
+tests stored in /scenarios/tests folder
+to make logs and screenshots are saved in /results folder required:
+- using terminal run tests from root folder
+- using pycharm runner set:
+  - set working directory to root folder
+
+BrowserFactory:
+- currently only chrome browser is supported
+- browser name can be set as '--browser' argument upon pytest running
+
+
+
+
